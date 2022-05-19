@@ -12,6 +12,17 @@ font-family: 'Kanit', sans-serif; */
     --extra-color: #747c48;
 }
 
+*::-webkit-scrollbar {
+    width: 0;
+}
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+}
+
 /* CSS reset */
 body {
     background-color: #9cb4b4a9;
@@ -153,7 +164,7 @@ html {
 /* home section */
 .bgImg {
     height: 100vh;
-    background: url(../../components/images/jewelries.jpg);
+    background: url(../../components/images/hero.jpg);
     background-size: cover;
     position: relative;
 }
@@ -209,14 +220,17 @@ html {
 }
 #about {
     padding: 75px 0px 10px;
-    /* height: 100vh; */
 }
 fieldset > legend {
+    color: transparent;
+    -webkit-text-stroke: 1.2px #0e1624;
+    font-size: 1.25em;
+    letter-spacing: 3px;
     text-align: center;
-    font-family: 'Akshar', sans-serif;
+    text-transform: uppercase;
 }
 fieldset {
-    width: 65%;
+    width: 60%;
     align-content: center;
     padding: 4.5px 0 20px;
     border-radius: 25px;
@@ -232,14 +246,46 @@ fieldset {
     font-family: 'Akshar', sans-serif;
     width: 50%;
     line-height: 25px;
+    font-size: 1.1em;
+    /* text-align: justify; */
 }
 .leftPhoto {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
-.leftPhoto > .jewerly {
-    width: 100%;
-    height: 350px;
+.leftPhoto .jewerly {
+    width: auto;
+    height: auto;
     border: none;
     border-radius: 35px;
+    box-shadow: rgba(0,0,0,0.4) 0px 2px 4px, rgba(0,0,0,0.3) 0px 7px 13px -3px, rgba(0,0,0,0.2) 0px -3px 0px inset;
+}
+.since > h5 {
+    text-align: center;
+    color: #152238;
+    margin: 10px auto 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .about {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .leftPhoto .jewerly {
+        margin: 10px;
+    }
+    .rightText {
+        width: auto;
+        padding: 10px;
+    }
+    fieldset {
+        padding: 0 0 5px 0;
+    }
+}
+@media (max-width: 435px) {
+    fieldset {
+        width: 80%;
+    }
 }
